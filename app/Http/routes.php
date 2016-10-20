@@ -19,12 +19,14 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/article','HomeController@article');
+Route::get('article/{id}', 'ArticleController@show');
+Route::post('comment', 'CommentController@store');
 
 Route::get('now',function(){
     return date('Y-m-d H:i:s');
 });
 
+//后台管理
 Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function() {
     Route::get('/', 'HomeController@index');
     Route::get('/article','HomeController@article');
