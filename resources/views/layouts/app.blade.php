@@ -10,7 +10,17 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="http://portal.dev.yunhuni.com/resources/bower_components/bootstrap/dist/css/bootstrap.css">
+
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+    <script src="{{ asset('../node_modules/clone/clone.js')}}"></script> -->
+
+    <!--
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/font-awesome-4.5.0/css/font-awesome.css">
+    <link rel="stylesheet" href="/assets/AdminLTE/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="/assets/AdminLTE/css/skins/skin-blue.min.css">
+    <script src="//cdn.bootcss.com/jquery/2.2.3/jquery.js"></script>
+    <script src="/assets/layer/layer.js"></script> -->
 
     <style>
         body {
