@@ -1,7 +1,11 @@
 #安装
 ```
 composer create-project laravel/laravel learnlaravel5 5.2.31
+composer install
+npm install
+php artisan key:generate
 ```
+
 
 #运行
 ```
