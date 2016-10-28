@@ -17,7 +17,6 @@
     <link href="{{ URL::asset('assets/css/min.css') }}" rel="stylesheet" type="text/css"/>
 
 
-    <script src="{{ URL::asset() }}}/"></script>
 
     <!--
     <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">

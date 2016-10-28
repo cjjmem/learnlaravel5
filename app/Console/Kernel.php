@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use DB;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -13,7 +14,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        // Commands\Inspire::class,
+        'App\Console\Commands\Inspire',
     ];
 
     /**
@@ -26,5 +27,21 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+
+
+        $schedule->call(function(){
+            DB::table('articles')->delete();
+        })->everyMinute();
+
+        $schedule->call(function(){
+            DB::table('comments')->insert([
+                'nickname' => str_random(10),
+                'email' => str_random(10).'@gmail.com',
+                'content' => bcrypt('secret'),
+            ]);
+        })->everyMinute();
+
+
+
     }
 }
