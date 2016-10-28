@@ -1,0 +1,1 @@
+{"version":3,"sources":["app.js"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","file":"app.js","sourcesContent":["/**\r\n * Created by chenjunjia on 2016/10/24.\r\n */\r\n\r\nfunction copyurl(){\r\n    console.log(this);\r\n}\r\n\r\nfunction ls(){\r\n\r\n}"]}

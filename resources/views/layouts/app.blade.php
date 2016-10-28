@@ -12,7 +12,12 @@
     <link rel="stylesheet" href="http://portal.dev.yunhuni.com/resources/bower_components/bootstrap/dist/css/bootstrap.css">
 
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
-    <script src="{{ asset('../node_modules/clone/clone.js')}}"></script> -->
+
+    <link href="{{ URL::asset('node_modules//.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ URL::asset('assets/css/min.css') }}" rel="stylesheet" type="text/css"/>
+
+
+    <script src="{{ URL::asset() }}}/"></script>
 
     <!--
     <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
