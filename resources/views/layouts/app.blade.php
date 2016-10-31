@@ -9,12 +9,13 @@
 
 
     <!-- Styles -->
-    <link rel="stylesheet" href="http://portal.dev.yunhuni.com/resources/bower_components/bootstrap/dist/css/bootstrap.css">
+    <!--<link rel="stylesheet" href="http://portal.dev.yunhuni.com/resources/bower_components/bootstrap/dist/css/bootstrap.css">-->
+    <!--<link href="{{ URL::asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css"/>-->
+    <link href="{{ URL::asset('css/app.css') }}" rel="stylesheet">
 
-    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
-
-    <link href="{{ URL::asset('node_modules//.css') }}" rel="stylesheet" type="text/css"/>
+   {{-- <link href="{{ URL::asset('node_modules//.css') }}" rel="stylesheet" type="text/css"/>
     <link href="{{ URL::asset('assets/css/min.css') }}" rel="stylesheet" type="text/css"/>
+--}}
 
 
 
@@ -53,6 +54,8 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Laravel
                 </a>
+                <a v-on:click="test()">132456</a>
+
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -87,8 +90,13 @@
     @yield('content')
 
     <!-- JavaScripts -->
-    <script src="http://portal.dev.yunhuni.com/resources/bower_components/jquery/dist/jquery.min.js" ></script>
-    <script src="http://portal.dev.yunhuni.com/resources/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+    <script src="{{ URL::asset('js/app.js') }}"></script>
+    <script src="{{ URL::asset('js/jquery.min.js') }}"></script>
+    <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
+
+
+    <!--<script src="http://portal.dev.yunhuni.com/resources/bower_components/jquery/dist/jquery.min.js" ></script>-->
+    <!--<script src="http://portal.dev.yunhuni.com/resources/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
+
 </body>
 </html>
