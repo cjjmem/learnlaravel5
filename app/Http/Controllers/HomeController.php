@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -31,7 +31,8 @@ class HomeController extends Controller
      * 文章列表
      */
     public function article(){
-        return view('article/list')->withArticles(\App\Article::all());
+       echo 2;exit;
+        // return view('article/list')->withArticles(\App\Article::all());
     }
 
 }

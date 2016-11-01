@@ -17,7 +17,15 @@ Route::get('/', function () {
 
 Route::auth();
 
+
+//快速体验
+Route::get('quick/callback', 'CallController@callback');
+Route::get('quick/notify', 'CallController@notify');
+Route::get('quick/captcha', 'CallController@captcha');
+
+
 Route::get('/home', 'HomeController@index');
+Route::get('/home/article', 'HomeController@article');
 
 Route::get('article/{id}', 'ArticleController@show');
 Route::post('comment', 'CommentController@store');
