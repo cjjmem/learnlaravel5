@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Captcha;
 use App\Http\Requests;
 
 class CallController extends Controller
@@ -19,6 +19,12 @@ class CallController extends Controller
      * 语音回拨
      */
     public function callback(){
+/*        $p = captcha_img('flat');
+        $url = Captcha::src('flat');
+
+        print_r($url);
+        exit;*/
+
         return view('call/callback');
     }
 

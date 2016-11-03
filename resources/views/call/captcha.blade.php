@@ -21,7 +21,8 @@
                                         <input type="text" class="input middle-input" placeholder="请输入手机号码">
                                     </div>
                                     <div class="txtbox">
-                                        <input type="text" class="input small-input" placeholder="请输入验证码">
+                                        <input type="text" class="input small-input left" placeholder="请输入验证码">
+                                        <div class="myinput left"> <my-code></my-code></div>
                                     </div>
                                     <div class="txtbox">
                                         <button class="btn">发送</button>

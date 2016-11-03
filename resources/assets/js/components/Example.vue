@@ -1,23 +1,25 @@
 <template>
-    <div class="">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Example Component2</div>
-
-                    <div class="panel-body">
-                        I'm an example component!
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div>
+        <div class="img-code" @click="change"></div>
     </div>
 </template>
-
 <script>
     export default {
+        methods: {
+            change: function () {
+                $.ajax({
+                    url: "captcha-img", context: {}, success: function (d) {
+                        $('.img-code').html(d);
+                    }
+                });
+            }
+        },
         ready() {
-            console.log('Component ready.')
+            this.change()
         }
     }
 </script>
+
+<style>
+
+</style>

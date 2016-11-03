@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use Validator;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -22,16 +23,21 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        //判断验证码是否正确
+        // $validator = Validator::make($request->all(), ['captcha' => 'required|captcha']);
+
         return view('home');
     }
 
     /**
      * 文章列表
      */
-    public function article(){
-       echo 2;exit;
+    public function article()
+    {
+        echo 2;
+        exit;
         // return view('article/list')->withArticles(\App\Article::all());
     }
 

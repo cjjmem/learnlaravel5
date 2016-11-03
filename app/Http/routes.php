@@ -11,6 +11,16 @@
 |
 */
 
+/**
+ * 图形验证码
+ */
+Route::any('captcha-img', function(){return captcha_img('flat');});
+
+/**
+ * 微信消息入口
+ */
+Route::any('/wechat', 'WechatController@serve');
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -35,7 +45,9 @@ Route::get('now',function(){
 });
 
 //后台管理
-Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function() {
+//中间件 'middleware'=>'auth'
+//Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function() {
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function() {
     Route::get('/', 'HomeController@index');
     Route::get('/article','HomeController@article');
 });

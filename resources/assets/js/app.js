@@ -14,15 +14,12 @@ require('./bootstrap');
  */
 
 Vue.component('example', require('./components/Example.vue'));
+Vue.component('MyCode', require('./components/Code.vue'));
 
 const app = new Vue({
     el: 'body',
-    componetns:{
-
-    },
     methods:{
         test:function () {
-            console.log(222)
         }
     }
 });
