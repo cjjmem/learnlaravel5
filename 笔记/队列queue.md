@@ -1,4 +1,4 @@
-#队列
+#队列 Queue
 
 ##配置文件  
 
@@ -27,46 +27,12 @@
    *  队列优先级 *php artisan queue:listen --queue=high,low*
    *  指定任务超时参数 *php artisan queue:listen --timeout=60* 
    *  指定队列睡眠时间  *php artisan queue:listen --sleep=5*
-### linxu 启动 监听队列
-   nohup php artisan queue:listen &
 
-## linux 提供的进程监听器  Supervisor配置
-
-Supervisor为Linux操作系统提供的进程监视器，将会在失败时自动重启queue:listen或queue:work命令，要在Ubuntu上安装Supervisor，使用如下命令：
-
-```shell
-    sudo apt-get install supervisor
-```
-
-Supervisor配置文件通常存放在/etc/supervisor/conf.d目录，在该目录中，可以创建多个配置文件指示Supervisor如何监视进程，例如，让我们创建一个开启并监视queue:work进程的laravel-worker.conf文件：
-
-```shell
-[program:laravel-worker]
-process_name=%(program_name)s_%(process_num)02d
-command=php /home/forge/app.com/artisan queue:work sqs --sleep=3 --tries=3 --daemon
-autostart=true
-autorestart=true
-user=forge
-numprocs=8
-redirect_stderr=true
-stdout_logfile=/home/forge/app.com/worker.log
-```
-
-在本例中，numprocs指令让Supervisor运行8个queue:work进程并监视它们，如果失败的话自动重启。配置文件创建好了之后，可以使用如下命令更新Supervisor配置并开启进程：
-
-```shell
-sudo supervisord -c /etc/supervisord.conf
-sudo supervisorctl -c /etc/supervisor/supervisord.conf
-sudo supervisorctl reread
-sudo supervisorctl update
-sudo supervisorctl start laravel-worker:*
-```
-
-[supervisord文档](http://supervisord.org/index.html)
-
-
-
-
+##重试失败命令
+    
+   *  重试所有失败任务 *php artisan queue:retry all*
+   *  删除一个失败任务 *php artisan queue:forget 5* 
+   *  删除所有失败任务 *php artisan queue:flush*
 
    
 ##任务类结构 
@@ -200,6 +166,42 @@ class AppServiceProvider extends ServiceProvider
 
 
 
+### linxu 启动 监听队列
+   nohup php artisan queue:listen &
+
+## linux 提供的进程监听器  Supervisor配置
+
+Supervisor为Linux操作系统提供的进程监视器，将会在失败时自动重启queue:listen或queue:work命令，要在Ubuntu上安装Supervisor，使用如下命令：
+
+```shell
+    sudo apt-get install supervisor
+```
+
+Supervisor配置文件通常存放在/etc/supervisor/conf.d目录，在该目录中，可以创建多个配置文件指示Supervisor如何监视进程，例如，让我们创建一个开启并监视queue:work进程的laravel-worker.conf文件：
+
+```shell
+[program:laravel-worker]
+process_name=%(program_name)s_%(process_num)02d
+command=php /home/forge/app.com/artisan queue:work sqs --sleep=3 --tries=3 --daemon
+autostart=true
+autorestart=true
+user=forge
+numprocs=8
+redirect_stderr=true
+stdout_logfile=/home/forge/app.com/worker.log
+```
+
+在本例中，numprocs指令让Supervisor运行8个queue:work进程并监视它们，如果失败的话自动重启。配置文件创建好了之后，可以使用如下命令更新Supervisor配置并开启进程：
+
+```shell
+sudo supervisord -c /etc/supervisord.conf
+sudo supervisorctl -c /etc/supervisor/supervisord.conf
+sudo supervisorctl reread
+sudo supervisorctl update
+sudo supervisorctl start laravel-worker:*
+```
+
+[supervisord文档](http://supervisord.org/index.html)
 
     
 
