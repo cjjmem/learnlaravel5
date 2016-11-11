@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Providers;
-
+use Log;
+use Queue;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -14,6 +15,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        Queue::after(function ($connection, $data = array()) {
+            Log::info(json_encode($connection));
+            Log::info(json_encode($data));
+        });
+
     }
 
     /**

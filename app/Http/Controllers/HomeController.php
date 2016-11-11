@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Jobs\SendEmail;
 use Validator;
+use Redis;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -27,7 +29,10 @@ class HomeController extends Controller
     {
         //判断验证码是否正确
         // $validator = Validator::make($request->all(), ['captcha' => 'required|captcha']);
-
+        $values = Redis::lrange('names', 5, 10);
+        $v = Redis::get('names');
+        print_r($v);
+        exit;
         return view('home');
     }
 
@@ -40,5 +45,10 @@ class HomeController extends Controller
         exit;
         // return view('article/list')->withArticles(\App\Article::all());
     }
+
+    public function send(){
+       dispatch(new SendEmail('475647150@qq.com'));
+    }
+
 
 }

@@ -44,6 +44,9 @@ Route::get('now',function(){
     return date('Y-m-d H:i:s');
 });
 
+Route::get('send','HomeController@send');
+
+
 //后台管理
 //中间件 'middleware'=>'auth'
 //Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function() {
