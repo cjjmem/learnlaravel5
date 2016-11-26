@@ -21,6 +21,13 @@ Route::any('captcha-img', function(){return captcha_img('flat');});
  */
 Route::any('/wechat', 'WechatController@serve');
 
+//微信容器设置demo
+Route::get('/content','WechatController@content');
+//壹耘sdk demo
+Route::get('/yun','WechatController@yun');
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -29,9 +36,9 @@ Route::auth();
 
 
 //快速体验
-Route::get('quick/callback', 'CallController@callback');
-Route::get('quick/notify', 'CallController@notify');
-Route::get('quick/captcha', 'CallController@captcha');
+Route::get('quick/callback', 'CallController@callback'); //语音回拨
+Route::get('quick/notify', 'CallController@notify');    //语音通知
+Route::get('quick/captcha', 'CallController@captcha');  //语音验证码
 
 
 Route::get('/home', 'HomeController@index');

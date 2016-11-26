@@ -108,7 +108,7 @@ return [
     |
     */
 
-    'log' => env('APP_LOG', 'single'),
+    'log' => env('APP_LOG', 'daily'),
 
     /*
     |--------------------------------------------------------------------------
@@ -165,6 +165,11 @@ return [
          * 微信larvar sdk
          */
         Overtrue\LaravelWechat\ServiceProvider::class,
+        /**
+         * 云呼你
+         */
+        //cjjmem\oneyun\OneyunServiceProvider::class,
+        Oneyun\OneyunServiceProvider::class,
 
 
 
@@ -216,7 +221,10 @@ return [
         //验证码
         'Captcha' => Mews\Captcha\Facades\Captcha::class,
         //微信sdk
-        'Wechat' => Overtrue\LaravelWechat\Facade::class,
+        'EasyWeChat' => Overtrue\LaravelWechat\Facade::class,
+        //云呼你
+       // Latrell\Alipay\AlipayServiceProvider::class,
+       // 'Cjjmem' => Cjjmem\Facade::class,
     ],
 
 ];

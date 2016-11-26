@@ -4,9 +4,45 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9fc7555fd50ff2ac9f067b1dd530795e",
-    "content-hash": "f1f27b086836cbbae03c83c66abfb1e1",
+    "hash": "329aaf4fda863d1f1ee0860a9cae20ac",
+    "content-hash": "8b3ffbc2d073ed8fb7e857b467cb12e6",
     "packages": [
+        {
+            "name": "cjjmem/oneyun",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cjjmem/oneyun.git",
+                "reference": "4f435f19cece787f01432268efe8a28dbc0d954b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/cjjmem/oneyun/4f435f19cece787f01432268efe8a28dbc0d954b.zip",
+                "reference": "4f435f19cece787f01432268efe8a28dbc0d954b",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "5.*",
+                "illuminate/events": "5.*",
+                "illuminate/support": "5.*",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Oneyun\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "chenjj",
+                    "email": "chenjj@oneyun.com"
+                }
+            ],
+            "description": "sdk",
+            "time": "2016-11-26 07:09:28"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "3.0.0",
@@ -3880,7 +3916,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "cjjmem/oneyun": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
