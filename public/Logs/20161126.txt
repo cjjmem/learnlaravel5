@@ -37,3 +37,27 @@ application/json; charset=utf-8
 ----------2016-11-26 06:59:23----------
 [鉴权]
 PAbT8i0QcCgs7iyF7zH2o1A35xrP7EEJeOViGDU9sgE=
+
+----------2016-11-26 08:58:03----------
+
+
+【语音回拨】
+
+----------2016-11-26 08:58:03----------
+request body = {"from1":null,"to1":"13611460986","from2":null,"to2":"17606661993","ring_tone":null,"ring_tone_mode":0,"max_dial_duration":30,"max_call_duration":3600,"recording":0,"record_mode":0,"user_data":"aaaaaaa"}
+
+----------2016-11-26 08:58:03----------
+request url = http://www.baidu.comcall/duo_callback
+
+----------2016-11-26 08:58:03----------
+[签名数据]
+POST
+6c59afdc188abd35922b21d5673b4e43
+application/json; charset=utf-8
+20161126085803
+自定义id
+/duo_callback
+
+----------2016-11-26 08:58:03----------
+[鉴权]
+fOKAdq/NN4hcr1pFZgdZjpAKtobx4hKinU+WzyvAEQQ=

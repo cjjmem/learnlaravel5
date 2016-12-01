@@ -36,7 +36,7 @@ Route::auth();
 
 
 //快速体验
-Route::get('quick/callback', 'CallController@callback'); //语音回拨
+Route::match(['get','post'],'quick/callback', 'CallController@callback'); //语音回拨
 Route::get('quick/notify', 'CallController@notify');    //语音通知
 Route::get('quick/captcha', 'CallController@captcha');  //语音验证码
 

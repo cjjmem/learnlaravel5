@@ -21,9 +21,10 @@
 </script>
 
 <style>
-    .img-code{
+    .img-code {
         cursor: pointer;
     }
+
     .img-code img {
         width: 110px;
     }

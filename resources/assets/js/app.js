@@ -19,7 +19,8 @@ Vue.component('MyCode', require('./components/Code.vue'));
 const app = new Vue({
     el: 'body',
     methods:{
-        test:function () {
+        test: function () {
+            console.log(2)
         }
     }
 });

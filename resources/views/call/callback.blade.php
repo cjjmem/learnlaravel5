@@ -13,24 +13,25 @@
                         <div class="detail">用户发起请求，由云平台给主被叫双方拨打电话，进行通话</div>
                     </div>
                     <div class="content">
-                        <div class="row">
+                        <form  role="form" method="POST" action="{{ url('quick/callback') }}">
+                            {{ csrf_field() }}
+                            <div class="row">
                             <div class="col-md-7">
                                 <div class="child-l">
                                     <div class="txtbox">
                                         <label class="label">手机号A:</label>
-                                        <input type="text" class="input middle-input" placeholder="请输入手机号码">
+                                        <input type="text" class="input middle-input" name="phone1" placeholder="请输入手机号码">
                                     </div>
                                     <div class="txtbox">
                                         <label class="label">手机号B:</label>
-                                        <input type="text" class="input middle-input" placeholder="请输入另一个手机号">
+                                        <input type="text" class="input middle-input" name="phone2"  placeholder="请输入另一个手机号">
                                     </div>
                                     <div class="txtbox">
-                                        <input type="text" class="input small-input left" placeholder="请输入验证码">
+                                        <input type="text" class="input small-input left" name="code" placeholder="请输入验证码">
                                         <div class="myinput left"> <my-code></my-code></div>
-
                                     </div>
                                     <div class="txtbox">
-                                        <button class="btn" v-on:click="test">免费通话</button>
+                                        <button class="btn" type="submit">免费通话</button>
                                     </div>
                                     <div class="txtbox">
                                         <span class="tips">正在拨打，请及时接听</span>
@@ -43,6 +44,7 @@
                             </div>
 
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>

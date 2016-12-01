@@ -9,21 +9,25 @@ use App\Http\Requests;
 class CallController extends Controller
 {
 
-    public function __construct()
-    {
+    function __construct(){
+
+        $this->middleware('oneyun');
 
     }
-
 
     /**
      * 语音回拨
      */
-    public function callback(){
-/*        $p = captcha_img('flat');
-        $url = Captcha::src('flat');
+    public function callback(Request $request)
+    {
+        if ($request->isMethod('post')) {
 
-        print_r($url);
-        exit;*/
+            dd($request->all());
+
+            //return redirect('/')->with('ok', trans('front/contact.ok'));
+
+            return response()->json(['statut' => 'ok']);
+        }
 
         return view('call/callback');
     }
@@ -32,14 +36,16 @@ class CallController extends Controller
     /**
      * 语音验证码
      */
-    public function captcha(){
+    public function captcha()
+    {
         return view('call/captcha');
     }
 
     /**
      * 语音通知
      */
-    public function notify(){
+    public function notify()
+    {
         return view('call/notify');
     }
 

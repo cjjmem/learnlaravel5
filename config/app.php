@@ -169,10 +169,7 @@ return [
          * 云呼你
          */
         //cjjmem\oneyun\OneyunServiceProvider::class,
-        Oneyun\OneyunServiceProvider::class,
-
-
-
+        //Oneyun\OneyunServiceProvider::class,
     ],
 
     /*
@@ -221,7 +218,7 @@ return [
         //验证码
         'Captcha' => Mews\Captcha\Facades\Captcha::class,
         //微信sdk
-        'EasyWeChat' => Overtrue\LaravelWechat\Facade::class,
+        'EasyWeChat' => OvertrLarue\avelWechat\Facade::class,
         //云呼你
        // Latrell\Alipay\AlipayServiceProvider::class,
        // 'Cjjmem' => Cjjmem\Facade::class,

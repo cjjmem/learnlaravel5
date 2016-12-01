@@ -51,5 +51,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         //微信路由中间件
         'wechat.oauth' => \Overtrue\LaravelWechat\Middleware\OAuthAuthenticate::class,
+        //壹耘中间件
+        'oneyun' => \App\Http\Middleware\OneYun::class,
     ];
 }

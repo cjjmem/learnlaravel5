@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cjjmem/oneyun.git",
-                "reference": "4f435f19cece787f01432268efe8a28dbc0d954b"
+                "reference": "29347e67fbe1295b97df2ceed993b674c0d5d597"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/cjjmem/oneyun/4f435f19cece787f01432268efe8a28dbc0d954b.zip",
-                "reference": "4f435f19cece787f01432268efe8a28dbc0d954b",
+                "url": "https://packagist.phpcomposer.com/files/cjjmem/oneyun/29347e67fbe1295b97df2ceed993b674c0d5d597.zip",
+                "reference": "29347e67fbe1295b97df2ceed993b674c0d5d597",
                 "shasum": ""
             },
             "require": {
@@ -41,7 +41,7 @@
                 }
             ],
             "description": "sdk",
-            "time": "2016-11-26 07:09:28"
+            "time": "2016-11-26 08:36:43"
         },
         {
             "name": "classpreloader/classpreloader",

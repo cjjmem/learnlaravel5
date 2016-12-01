@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Laravel</title>
-    <link href="{{ URL::asset('css/app.css') }}" rel="stylesheet">
+    {{--<link href="{{ URL::asset('css/app.css') }}" rel="stylesheet">--}}
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-static-top">
